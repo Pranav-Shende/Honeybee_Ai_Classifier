@@ -1,5 +1,3 @@
-Absolutely. Here is a **project-focused README.md** you can use for your **AI-Based Honeybee Image Tagging and Colony Assessment System**. It is written so that someone opening your GitHub repository can understand the project, its purpose, workflow, technologies, and current prototype status.
-
 ````markdown
 # 🐝 AI-Based Honeybee Image Tagging and Colony Assessment System
 
