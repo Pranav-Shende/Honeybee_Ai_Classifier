@@ -1,4 +1,4 @@
-````markdown
+
 # 🐝 AI-Based Honeybee Image Tagging and Colony Assessment System
 
 ## 📌 Overview
