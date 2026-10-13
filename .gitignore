@@ -1,0 +1,59 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Trained models and checkpoints
+*.pt
+*.pth
+*.onnx
+*.engine
+*.torchscript
+
+# Dataset and training output
+dataset/
+runs/
+wandb/
+mlruns/
+
+# Temporary uploaded videos and generated results
+static/uploads/*
+static/results/*
+
+# Keep placeholder files so Git preserves the directories
+!static/uploads/.gitkeep
+!static/results/.gitkeep
+
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+tmp/
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Optional local database
+instance/
+*.sqlite
+*.sqlite3
+*.db
