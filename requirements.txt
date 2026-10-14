@@ -8,3 +8,4 @@ imageio-ffmpeg
 python-dotenv
 PyJWT[crypto]
 requests
+lap>=0.5.12
