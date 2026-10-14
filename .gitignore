@@ -20,7 +20,7 @@ env/
 !.env.example
 
 # Trained models and checkpoints
-*.pt
+#*.pt
 *.pth
 *.onnx
 *.engine
