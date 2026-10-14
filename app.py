@@ -28,7 +28,15 @@ RESULT_DIR.mkdir(parents=True, exist_ok=True)
 app.config["MAX_CONTENT_LENGTH"] = 200 * 1024 * 1024
 
 MODEL_PATH = BASE_DIR / "best.pt"
-model = YOLO(str(MODEL_PATH)) if MODEL_PATH.exists() else None
+model = None
+
+def ensure_model_loaded():
+    global model
+
+    if model is None and MODEL_PATH.exists():
+        model = YOLO(str(MODEL_PATH))
+
+    return model
 
 IMAGE_EXTENSIONS = {"jpg", "jpeg", "png", "webp"}
 VIDEO_EXTENSIONS = {"mp4", "mov", "avi", "mkv", "webm"}
@@ -99,7 +107,7 @@ def status():
 @app.route("/api/detect-image", methods=["POST"])
 @require_auth
 def detect_image():
-    if model is None:
+    if ensure_model_loaded() is None:
         return jsonify({"error": "Model weights best.pt were not found."}), 503
 
     file = request.files.get("file")
@@ -162,7 +170,7 @@ def detect_image():
 @app.route("/api/process-video", methods=["POST"])
 @require_auth
 def process_video():
-    if model is None:
+    if ensure_model_loaded() is None:
         return jsonify({"error": "Model weights best.pt were not found."}), 503
 
     file = request.files.get("video")
