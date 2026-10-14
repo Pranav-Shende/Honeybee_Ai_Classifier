@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1120">
+    <title>Sign in | Honeybee AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+</head>
+<body class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-visual" aria-label="Honeybee AI introduction">
+            <a class="auth-brand" href="/">
+                <span class="brand-mark" aria-hidden="true">🐝</span>
+                <span>Honeybee <span class="brand-accent">AI</span></span>
+            </a>
+
+            <div class="visual-copy">
+                <span class="eyebrow"><span class="status-dot"></span> COMPUTER VISION · COLONY MONITORING</span>
+                <h1>Smarter insights.<br><span>Healthier colonies.</span></h1>
+                <p>Analyze hive footage, identify bee classes, and turn visual data into useful colony insights.</p>
+            </div>
+
+            <div class="visual-footer">
+                <span class="footer-line"></span>
+                <span>AI-powered honeybee monitoring</span>
+            </div>
+            <div class="visual-orb orb-one"></div>
+            <div class="visual-orb orb-two"></div>
+        </section>
+
+        <section class="auth-main">
+            <div class="auth-card">
+                <div class="mobile-brand">
+                    <span class="brand-mark" aria-hidden="true">🐝</span>
+                    <span>Honeybee <span class="brand-accent">AI</span></span>
+                </div>
+
+                <div class="auth-heading">
+                    <span class="eyebrow">WELCOME BACK</span>
+                    <h2>Sign in to your account</h2>
+                    <p>Continue to your Honeybee AI dashboard.</p>
+                </div>
+
+                <form id="login-form" class="auth-form">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email"
+                           placeholder="you@example.com" required>
+
+                    <div class="password-label">
+                        <label for="password">Password</label>
+                    </div>
+                    <input id="password" name="password" type="password"
+                           autocomplete="current-password" placeholder="Enter your password" required>
+
+                    <button id="login-button" class="auth-submit" type="submit">
+                        <span>Sign in</span><span aria-hidden="true">→</span>
+                    </button>
+                    <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="auth-switch">New to Honeybee AI? <a href="/register">Create an account</a></p>
+                <p class="auth-security"><span aria-hidden="true">🔒</span> Secure authentication powered by Supabase</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="{{ url_for('static', filename='supabase-config.js') }}"></script>
+    <script src="{{ url_for('static', filename='auth.js') }}"></script>
+</body>
+</html>
