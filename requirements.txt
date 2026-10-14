@@ -1,6 +1,10 @@
 flask
+gunicorn
 ultralytics
-opencv-python
+opencv-python-headless
 pillow
 numpy
 imageio-ffmpeg
+python-dotenv
+PyJWT[crypto]
+requests
