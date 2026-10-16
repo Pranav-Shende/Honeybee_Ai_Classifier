@@ -15,6 +15,10 @@ from flask import Flask, jsonify, render_template, request, url_for
 from PIL import Image
 from ultralytics import YOLO
 
+torch.set_num_threads(1)
+torch.set_num_interop_threads(1)
+cv2.setNumThreads(0)
+
 app = Flask(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent
