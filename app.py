@@ -14,6 +14,8 @@ import numpy as np
 from flask import Flask, jsonify, render_template, request, url_for
 from PIL import Image
 from ultralytics import YOLO
+import torch
+import cv2
 
 torch.set_num_threads(1)
 torch.set_num_interop_threads(1)
